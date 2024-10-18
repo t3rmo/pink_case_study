@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     errorElement: <NotFoundView />,
   },
   {
-    path: "/details",
+    path: "/details/:patientId",
     element: <PatientDetailView />,
   },
 ]);
