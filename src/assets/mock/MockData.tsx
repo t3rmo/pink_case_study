@@ -23,7 +23,7 @@ export const MOCKPATIENT_1 = {
 
 export const MOCKPATIENT_2 = {
   resourceType: "Patient",
-  id: "patient1",
+  id: "patient2",
   name: [
     {
       use: "official",
@@ -67,4 +67,4 @@ export const MOCKPATIENT_3 = {
   ],
 };
 
-export const MOCKPATIENT_LIST = { MOCKPATIENT_1, MOCKPATIENT_2, MOCKPATIENT_3 };
+export const MOCKPATIENT_LIST = [MOCKPATIENT_1, MOCKPATIENT_2, MOCKPATIENT_3];
