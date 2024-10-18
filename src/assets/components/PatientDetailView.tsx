@@ -6,7 +6,7 @@ detailed information about that patient
 import { Link, useParams } from "react-router-dom";
 
 export default function PatientDetailView() {
-  const params = useParams();
+  const params = useParams<{ patientId: string }>();
   return (
     <>
       <div>{params.patientId} - Patient Detail</div>
