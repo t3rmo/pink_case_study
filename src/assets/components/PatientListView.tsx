@@ -21,9 +21,6 @@ export default function PatientListView() {
           );
         })}
       </ol>
-      <button type="button">
-        <Link to="/details/1">Go to Patient Details View</Link>
-      </button>
     </>
   );
 }
