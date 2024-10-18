@@ -1,7 +1,6 @@
 import "./App.css";
+import PatientListView from "./assets/components/PatientListView";
 
-function App() {
-  return <div></div>;
+export default function App() {
+  return <PatientListView />;
 }
-
-export default App;
