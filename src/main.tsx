@@ -1,10 +1,11 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
+import "bootstrap/dist/css/bootstrap.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import PatientListView from "./assets/components/PatientListView";
 import PatientDetailView from "./assets/components/PatientDetailView";
 import NotFoundView from "./assets/components/NotFoundView";
+import PatientListView from "./assets/components/PatientListView";
 
 const router = createBrowserRouter([
   {

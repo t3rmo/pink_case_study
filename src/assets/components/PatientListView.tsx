@@ -3,11 +3,11 @@ Fetch and display a list of patients from the mock FHIR
 server.
 */
 
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { PatientService } from "../services/PatientService";
+import { PatientService } from "../shared/services/PatientService";
 import { Patient } from "../models/Patient";
 import { AxiosResponse } from "axios";
+import ListView from "../shared/components/ListView";
 
 export default function PatientListView() {
   const patientService: PatientService = new PatientService();
@@ -19,15 +19,12 @@ export default function PatientListView() {
 
       await request
         .then((response: AxiosResponse) => {
-          const patient = response.data as Patient;
-          setPatients((p) => [...p, patient]);
+          const _patient = response.data as Patient;
+          setPatients((p) => [...p, _patient]);
         })
-        .catch((err) => {
-          console.log(err.message);
+        .catch((_err) => {
+          console.log(_err.message);
           console.log("There was an error");
-        })
-        .finally(() => {
-          console.log("DONE!");
         });
     };
 
@@ -35,18 +32,12 @@ export default function PatientListView() {
   }, []);
 
   return (
-    <>
-      <div>Patient List View</div>
-      <ol>
-        {patients.map((patient) => {
-          const detailsRouter: string = "/details/" + patient.id;
-          return (
-            <li key={patient.id}>
-              <Link to={detailsRouter}>{patient.name[0]?.given}</Link>
-            </li>
-          );
-        })}
-      </ol>
-    </>
+    <div className="container">
+      <h1>Patient List View</h1>
+      <ListView
+        headers={["test1", "test2", "test3", "test4", ""]}
+        patients={patients}
+      />
+    </div>
   );
 }
