@@ -26,6 +26,7 @@ export default function PatientDetailView() {
             setPatient(response.data as Patient);
           })
           .catch((err) => {
+            console.log(err);
             alert(err.message);
           });
       }

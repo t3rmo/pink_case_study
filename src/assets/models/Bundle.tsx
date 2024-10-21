@@ -22,6 +22,7 @@ export interface BundleEntry {
   search: BundleEntrySearch;
 }
 
+/* THIS is very similar to a Patient Object || What else could this be?  */
 export interface BundleEntryResource {
   resourceType: string;
   id: string;
