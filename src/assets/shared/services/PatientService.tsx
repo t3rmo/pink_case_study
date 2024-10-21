@@ -12,4 +12,9 @@ export class PatientService {
     const subUrl: string = this.patientSubUrl + patientId;
     return this.httpService.get(subUrl);
   }
+
+  async getAllPatients() {
+    const subUrl: string = this.patientSubUrl;
+    return this.httpService.get(subUrl);
+  }
 }
