@@ -5,9 +5,11 @@ server.
 
 import { useEffect, useState } from "react";
 import { PatientService } from "../shared/services/PatientService";
-import { Patient } from "../models/Patient";
 import { AxiosResponse } from "axios";
 import PatientList from "../shared/components/PatientList";
+
+import { Patient } from "../models/Patient";
+import { Bundle } from "../models/Bundle";
 
 export default function PatientListView() {
   const patientService: PatientService = new PatientService();
@@ -15,16 +17,20 @@ export default function PatientListView() {
 
   useEffect(() => {
     const getMockPatient = async () => {
-      const request = patientService.getPatientById("patient-1");
+      const request = patientService.getAllPatients();
 
       await request
         .then((response: AxiosResponse) => {
-          const _patient = response.data as Patient;
-          setPatients((p) => [...p, _patient]);
+          const bundle: Bundle = response.data;
+          bundle.entry.map((entry) => {
+            if (entry.resource.resourceType == "Patient") {
+              setPatients((p) => [...p, entry.resource as Patient]);
+            }
+          });
         })
         .catch((_err) => {
-          console.log(_err.message);
-          console.log("There was an error");
+          console.log(_err);
+          alert("There was an error, check the consol for more informations");
         });
     };
 
@@ -33,7 +39,7 @@ export default function PatientListView() {
 
   return (
     <div className="container">
-      <h1>Patient List View</h1>
+      <h1 className="text-center">Patient List View</h1>
       <PatientList
         headers={["Name des Patienten", "Zu den Details"]}
         patients={patients}

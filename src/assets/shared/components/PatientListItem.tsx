@@ -1,24 +1,17 @@
 import { Link } from "react-router-dom";
-import { Patient } from "../../models/Patient";
 
 interface Props {
-  patient: Patient;
+  patientId: string;
+  fullName: string;
 }
 
-export default function PatientListItem({ patient }: Props) {
-  const detailsRouter: string = "/details/" + patient.id;
-
-  const createFullName = () => {
-    const firstName = patient.name[0]?.given.join("");
-    const lastName = patient.name[0]?.family;
-    const fullName = firstName + " " + lastName;
-    return fullName;
-  };
+export default function PatientListItem({ patientId, fullName }: Props) {
+  const detailsRouter: string = "/details/" + patientId;
 
   return (
     <tbody>
       <tr>
-        <th scope="row">{createFullName()}</th>
+        <th scope="row">{fullName}</th>
         <td>
           <Link to={detailsRouter}>Details</Link>
         </td>
