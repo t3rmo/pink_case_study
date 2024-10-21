@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { PatientService } from "../shared/services/PatientService";
 import { Patient } from "../models/Patient";
 import { AxiosResponse } from "axios";
-import ListView from "../shared/components/ListView";
+import PatientList from "../shared/components/PatientList";
 
 export default function PatientListView() {
   const patientService: PatientService = new PatientService();
@@ -34,7 +34,7 @@ export default function PatientListView() {
   return (
     <div className="container">
       <h1>Patient List View</h1>
-      <ListView
+      <PatientList
         headers={["Name des Patienten", "Zu den Details"]}
         patients={patients}
       />

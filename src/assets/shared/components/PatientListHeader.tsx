@@ -2,7 +2,7 @@ interface Props {
   headers: string[];
 }
 
-export default function ListViewHeader({ headers }: Props) {
+export default function PatientListHeader({ headers }: Props) {
   return (
     <thead>
       <tr>

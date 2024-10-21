@@ -5,7 +5,7 @@ interface Props {
   patient: Patient;
 }
 
-export default function ListViewItem({ patient }: Props) {
+export default function PatientListItem({ patient }: Props) {
   const detailsRouter: string = "/details/" + patient.id;
 
   const createFullName = () => {

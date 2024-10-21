@@ -8,6 +8,7 @@ import { PatientService } from "../shared/services/PatientService";
 import { useEffect, useState } from "react";
 import { Patient } from "../models/Patient";
 import { AxiosResponse } from "axios";
+import Card from "../shared/components/Card";
 
 export default function PatientDetailView() {
   const routeParams = useParams<{ patientId: string }>();
@@ -34,11 +35,11 @@ export default function PatientDetailView() {
   }, []);
 
   return (
-    <>
-      <div>{routeParams.patientId} - Patient Detail</div>
-      <button type="button">
+    <div className="d-flex flex-column h-100 w-100 justify-content-center text-center">
+      <h1>{routeParams.patientId} - Patient Detail</h1>
+      <button type="button" className="btn btn-link align-self-center">
         <Link to="/">Go to Patient List View</Link>
       </button>
-    </>
+    </div>
   );
 }
