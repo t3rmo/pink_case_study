@@ -1,50 +1,44 @@
-# React + TypeScript + Vite
+# TODOs
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Axios mit useQuery Hook auswechseln
+- Unit Tests schreiben
 
-Currently, two official plugins are available:
+# How to run this project
+1. Clone this repository (e.g. with `git clone https://github.com/t3rmo/pink_case_study.git`)
+2. `npm install`
+3. `npm run dev`
+4. Thats it, the project should execute with all its functionality
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+# Objective:
+To evaluate the candidate's problem-solving skills, ability to work with TypeScript
+and React, and their understanding of FHIR standards within a limited timeframe.
+# Estimated Duration:
+4 hours
+# Project Overview:
+You are tasked with creating a basic patient management interface for a radiology
+diagnostics platform. This interface will interact with a mock FHIR server to
+retrieve and display patient information
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+# Requirements:
+1. Setup and Environment:
+Set up a React project using Create React App with TypeScript template.
+Configure necessary dependencies including a FHIR client of your choice
+and any UI libraries.
+2. Features to Implement:
+Patient List View: Fetch and display a list of patients from the mock FHIR
+server.
+Patient Detail View: When a patient from the list is clicked, display
+detailed information about that patient.
+3. FHIR Integration:
+Fullstack Softwareentwickler 2
+Use the FHIR client to connect to a mock FHIR server (for example,
+http://hapi.fhir.org/baseR4).
+Fetch patient data using FHIR resources.
+4. User Interface:
+Display patient names in a list.
+On selecting a patient, show detailed patient information including name,
+gender, birth date, and any available address details.
+5. Error Handling:
+Implement basic error handling for network requests.
+optional: display meaningful error messages in the UI.
