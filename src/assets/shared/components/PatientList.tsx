@@ -8,7 +8,7 @@ interface Props {
 }
 
 export default function PatientList({ headers, patients }: Props) {
-  const renderPatientList = (patient: Patient) => {
+  const renderPatientListItem = (patient: Patient) => {
     let fullName: string = "Name Missing";
 
     if (patient && patient.name)
@@ -26,7 +26,7 @@ export default function PatientList({ headers, patients }: Props) {
   return (
     <table className="table">
       <PatientListHeader headers={headers} />
-      {patients.map((patient) => renderPatientList(patient))}
+      {patients.map((patient) => renderPatientListItem(patient))}
     </table>
   );
 }
