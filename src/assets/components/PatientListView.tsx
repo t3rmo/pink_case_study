@@ -35,7 +35,7 @@ export default function PatientListView() {
     <div className="container">
       <h1>Patient List View</h1>
       <ListView
-        headers={["test1", "test2", "test3", "test4", ""]}
+        headers={["Name des Patienten", "Zu den Details"]}
         patients={patients}
       />
     </div>
